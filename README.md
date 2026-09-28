@@ -16,13 +16,19 @@ exactly on acquisition protocol and sex and approximately on age.
 | `code/` | Preprocessing, QC, tensor fitting, registration, analysis |
 | `main.ipynb` | Cohort construction and protocol-confound analysis |
 | `validate_fit.py` | From-scratch tensor fit, used as a positive control |
-| `cohort_final.tsv` | Cohort definition with acquisition metadata |
+| `fetch_dwi.sh` | Retrieves the diffusion data from OpenNeuro S3 |
+| `cohort_final.tsv` | Analysis cohort with acquisition metadata |
 | `matched_pairs_final.tsv` | Matched pairings (analysis is unpaired by design) |
+| `acqp.txt`, `index.txt` | eddy acquisition parameters, shared by all participants |
 | `derivatives/*.tsv` | QC metrics and regional statistics |
-| `docs/ds000030_dataset_README.md` | Original dataset README, kept as source evidence |
+| `docs/` | Dataset documentation and `participants.tsv`, as distributed |
+| `GIT_ROUTINE.md` | Personal reference, unrelated to the analysis |
 
-Imaging data are not included. They are public and can be retrieved from
-OpenNeuro with `fetch_dwi.sh`.
+Intermediate cohort files (`cohort.tsv`, `cohort_with_acq.tsv`,
+`eligible_with_protocol.tsv`, `acq_params.tsv`, `matched_pairs.tsv`) are
+produced in order by `main.ipynb` and retained to document the cohort's
+construction, including the initial sex- and age-matched cohort that the
+protocol analysis subsequently invalidated.
 
 ## Pipeline
 
